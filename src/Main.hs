@@ -52,7 +52,7 @@ clisp = "/usr/bin/clisp"
 
 clispScript :: String -> [String] -> String
 clispScript imagePath systems = intercalate "\n" lines
-    where lines = [ "(setq *debugger-hook* (lambda (c h) (declare (ignore h)) (format t \"ERROR of type ~A: ~A~%\" (type-of c) c) (ext:quit 1)))" ] ++
+    where lines = [ "(setq *debugger-hook* (lambda (c h) (declare (ignore h)) (format *error-output* \"ERROR of type ~A: ~A~%\" (type-of c) c) (ext:quit 1)))" ] ++
                   map loadSystem systems ++
                   [ "(ensure-directories-exist \"" ++ imagePath ++ "\")"
                   , "(ext:saveinitmem \"" ++ imagePath ++ "\")" ]
