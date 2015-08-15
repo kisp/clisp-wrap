@@ -1,5 +1,5 @@
 {-# OPTIONS_GHC -fno-warn-name-shadowing #-}
-{-# LANGUAGE DoAndIfThenElse #-}
+{-# LANGUAGE CPP, DoAndIfThenElse #-}
 module Main (main)
 where
 
@@ -22,6 +22,15 @@ import Text.Printf
 
 -- EitherT
 newtype EitherT a m b = EitherT { runEitherT :: m (Either a b) }
+
+#if __GLASGOW_HASKELL__ >= 710
+instance Monad m => Functor (EitherT a m) where
+    fmap  = liftM
+
+instance Monad m => Applicative (EitherT a m) where
+    pure  = return
+    (<*>) = ap  -- defined in Control.Monad
+#endif
 
 instance Monad m => Monad (EitherT a m) where
         return   = EitherT . return . return
