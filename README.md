@@ -3,6 +3,8 @@
 # clisp-wrap
 Wrapper around clisp for fast script execution with (on demand compiled and cached) libraries.
 
+See also https://github.com/kisp/sbcl-wrap.
+
 # Building
 ```
 $ cabal sandbox init
