@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kisp/clisp-wrap.svg?branch=master)](https://travis-ci.org/kisp/clisp-wrap)
+
 # clisp-wrap
 Wrapper around clisp for fast script execution with (on demand compiled and cached) libraries.
 
