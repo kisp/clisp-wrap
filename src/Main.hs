@@ -69,7 +69,7 @@ clispScript imagePath systems = intercalate "\n" lines
 
 -- IO
 handleToDevNull :: IO Handle
-handleToDevNull = openFile "/tmp/log" WriteMode
+handleToDevNull = openFile "/dev/null" WriteMode
 
 makeImage :: String -> [String] -> IO (Either (String, Int) String)
 makeImage imagePath systems = do
