@@ -11,7 +11,7 @@ $ cabal sandbox init
 $ cabal install --only-dependencies
 $ cabal build   
 ```
-Then install to a convenient location, e.g. ```/usr/local/bin/clisp-wrap```.
+Then install ```dist/build/clisp-wrap/clisp-wrap``` to a convenient location, e.g. ```/usr/local/bin/clisp-wrap```.
 
 # Usage example
 Given a script foo.lisp:
