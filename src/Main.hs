@@ -57,7 +57,7 @@ systemsHash names = md5 $ concat $ sort (map l names)
 
 -- clisp
 clisp :: String
-clisp = "/usr/bin/clisp"
+clisp = "clisp"
 
 clispScript :: String -> [String] -> String
 clispScript imagePath systems = intercalate "\n" lines
@@ -155,7 +155,7 @@ main = do
 execClisp :: ImagePathAndClispCall -> IO ()
 execClisp (imagePath, clispScript, clispArgs) =
     executeFile clisp
-              False
+              True
               (["-q", "-norc", "-M", imagePath, clispScript] ++ clispArgs)
               Nothing
 
