@@ -70,3 +70,4 @@ user    0m0.030s
 sys     0m0.017s
 ```
 The image is stored in ~/.cache/clisp-wrap.
+
