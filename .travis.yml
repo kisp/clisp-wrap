@@ -39,4 +39,4 @@ deploy:
   on:
     repo: kisp/clisp-wrap
     tags: true
-    condition: $GHCVER = 8.0.2
+    condition: $GHCVER = 8.6.2
